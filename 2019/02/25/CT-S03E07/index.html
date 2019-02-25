@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="比赛节奏不错，但是最后出现了写题责任分配上的问题。  [x] A 分类讨论（大串暴力匹配，小串哈希处理） [x] D 容斥+二维莫队 [x] F 解方程 [x] G 计数（容斥） [x] H 思维状压DP [x] I 思维 [x] J 树上最大子段和（倍增、LCT、树剖） [x] K 前缀优化计数dp  其中BE为温暖的签到题。C题为较为简单的计数和容斥原理，在此不予讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T06:41:04.637Z">
+<meta property="og:updated_time" content="2019-02-25T06:45:07.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EyeBigBird2 2016 CT S03E07 2019.02.21">
 <meta name="twitter:description" content="比赛节奏不错，但是最后出现了写题责任分配上的问题。  [x] A 分类讨论（大串暴力匹配，小串哈希处理） [x] D 容斥+二维莫队 [x] F 解方程 [x] G 计数（容斥） [x] H 思维状压DP [x] I 思维 [x] J 树上最大子段和（倍增、LCT、树剖） [x] K 前缀优化计数dp  其中BE为温暖的签到题。C题为较为简单的计数和容斥原理，在此不予讨论。">
@@ -397,8 +397,8 @@
 <h2 id="题解-7"><a href="#题解-7" class="headerlink" title="题解"></a>题解</h2><p>稍加思索后发现可以是使用动态规划来做。</p>
 <p>定义状态$dp[i][j]$代表前$i$个位置有$j$种方法能取出连续$d$个大小相同的元素。</p>
 <p>假定每次$dp$转移位置与之前的部分异色。</p>
-<p>那么$dp[i][j]=(k-1)*(\displaystyle\sum<em>{u=1}^{i-d}{dp[u][j-(i-u-d+1)]+\displaystyle\sum</em>{u=i-d+1}^{i-1}{d[u][j]}})$</p>
-<p>其中，$k-1$是因为需要和上一种颜色不同。</p>
+<p>那么</p>
+<script type="math/tex; mode=display">dp[i][j]=(k-1)*(\displaystyle\sum_{u=1}^{i-d}{dp[u][j-(i-u-d+1)]+\displaystyle\sum_{u=i-d+1}^{i-1}{d[u][j]}})</script><p>其中，$k-1$是因为需要和上一种颜色不同。</p>
 <p>特别的，需要一开始预处理$dp[0][0]$的转移情况。</p>
 <p>时间复杂度$O(n^2*t)$</p>
 <p>注意到上式可以通过前缀和优化，最终时间复杂度$O(n*t)$</p>
