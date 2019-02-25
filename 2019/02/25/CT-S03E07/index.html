@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="比赛节奏不错，但是最后出现了写题责任分配上的问题。  [x] A 分类讨论（大串暴力匹配，小串哈希处理） [x] D 容斥+二维莫队 [x] F 解方程 [x] G 计数（容斥） [x] H 思维状压DP [x] I 思维 [x] J 树上最大子段和（倍增、LCT、树剖） [x] K 前缀优化计数dp  其中BE为温暖的签到题。C题为较为简单的计数和容斥原理，在此不予讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T05:41:29.352Z">
+<meta property="og:updated_time" content="2019-02-25T06:41:04.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EyeBigBird2 2016 CT S03E07 2019.02.21">
 <meta name="twitter:description" content="比赛节奏不错，但是最后出现了写题责任分配上的问题。  [x] A 分类讨论（大串暴力匹配，小串哈希处理） [x] D 容斥+二维莫队 [x] F 解方程 [x] G 计数（容斥） [x] H 思维状压DP [x] I 思维 [x] J 树上最大子段和（倍增、LCT、树剖） [x] K 前缀优化计数dp  其中BE为温暖的签到题。C题为较为简单的计数和容斥原理，在此不予讨论。">
@@ -344,9 +344,9 @@
 <h1 id="G-计数"><a href="#G-计数" class="headerlink" title="G.计数"></a>G.计数</h1><h2 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h2><p>给定一个数字$x$，要求构造长度为n的数列$A$，使得$a \le A_1 \le A_2 \le A_3 \le … \le A_n$，且A数列的最小公倍数能被数字$x$整除。</p>
 <p>$1 \le n \le 100$</p>
 <p>$1 \le a \le b \le 10^9$</p>
-<h2 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h2><p>对于$x$因式分解有$x=p_1^{y_1}<em> p_2^{y_2}</em> \cdots * p_u^{y_u}$</p>
-<p>因为要求$lcm$被$x$整除，所以必然有$x|A<em>{b_1}* A</em>{b<em>2}<em> \cdots </em> A</em>{b_p}$</p>
-<p>只有$p_u^{y_u}|A_i$时，$A_i$对$lcm$才有贡献</p>
+<h2 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h2><p>对于$x$因式分解有</p>
+<script type="math/tex; mode=display">x=p_1^{y_1}*p_2^{y_2}*\cdots*p_u^{y_u}</script><p>因为要求$lcm$被$x$整除，所以必然有</p>
+<script type="math/tex; mode=display">x|A_{b_1}* A_{b_2}* \cdots * A_{b_p}</script><p>只有$p_u^{y_u}|A_i$时，$A_i$对$lcm$才有贡献</p>
 <p>因此我们只考虑通过组合因数的最大幂次来得到这个$lcm$</p>
 <p>记$g[st]$为区间内数字约数中包含因数最大幂次集合st的数字数量，可以通过$b/t-(a-1)/t$得到</p>
 <p>记$f[st]$为不包含集合st中数字作为约数的数字数量，$f[st]$可以通过容斥公式$f[st]=\sum_{i\subset st}{-1}^{|i|}*g[i]$得到</p>
