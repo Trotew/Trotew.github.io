@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="比赛节奏不错，但是最后出现了写题责任分配上的问题。   A 分类讨论（大串暴力匹配，小串哈希处理）  D 容斥+二维莫队  F 解方程  G 计数（容斥）  H 思维状压DP  I 思维  J 树上最大子段和（倍增、LCT、树剖）  K 前缀优化计数dp  其中BE为温暖的签到题。C题为较为简单的计数和容斥原理，在此不予讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T05:05:35.473Z">
+<meta property="og:updated_time" content="2019-02-25T05:07:57.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EyeBigBird2 2016 CT S03E07 2019.02.21">
 <meta name="twitter:description" content="比赛节奏不错，但是最后出现了写题责任分配上的问题。   A 分类讨论（大串暴力匹配，小串哈希处理）  D 容斥+二维莫队  F 解方程  G 计数（容斥）  H 思维状压DP  I 思维  J 树上最大子段和（倍增、LCT、树剖）  K 前缀优化计数dp  其中BE为温暖的签到题。C题为较为简单的计数和容斥原理，在此不予讨论。">
@@ -332,7 +332,8 @@
 <p>$1 \le n \le 5*10^5$</p>
 <h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>记$S(l,r,x)$表示$[l,r]$区间中x出现的次数</p>
 <p>题目等价于求解$\sum_{x=1}^nS(l1,r1,x)*S(l2,r2,x)$</p>
-<p>容斥得到$\sum_{x=1}^nS(l1,r1,x)<em>S(l2,r2,x)<br>=\sum_{x=1}^n(S(1,r1,x)</em>S(1,r2,x)-S(1,l1-1,x)<em>S(1,r2,x)-S(1,l2-1,x)</em>S(1,r1,x)+S(1,l1-1,x)*S(1,l2-1,x))$</p>
+<p>容斥得到</p>
+<p>$$\sum_{x=1}^nS(l1,r1,x)<em>S(l2,r2,x)<br>=\sum_{x=1}^n(S(1,r1,x)</em>S(1,r2,x)-S(1,l1-1,x)<em>S(1,r2,x)-S(1,l2-1,x)</em>S(1,r1,x)+S(1,l1-1,x)*S(1,l2-1,x))$$</p>
 <p>记$Q(l,r)$为$\sum_{x=1}^nS(1,l,x)*S(1,r,x)$</p>
 <p>那么原题等价于求解$Q(r1,r2)-Q(l1-1,r2)-Q(l2-1,r1)+Q(l1-1,l2-1)$</p>
 <p>Q可以通过二维莫队求解</p>
