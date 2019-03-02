@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="codeforces,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="飘雨小镇">
-<meta property="og:url" content="http://Trotew.github.io/index.html">
+<meta name="description" content="2019.02.15 Codeforces Round 532 (Div. 2) [x] CR 532 d2 (6/6) xxxxx? [x] D 思维构造   [x] E 二分+有向图拓扑排序 [x] F 线性基+预处理（离线或者在线）    F. 线性基题意给定$n$个数字（大小为$a_i$），$q$次询问，每次询问区间$[l_i,r_i]$内任选一些数的异或和是多少。 $n,q&amp;lt;=5e">
+<meta name="keywords" content="codeforces">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cf18winter">
+<meta property="og:url" content="http://Trotew.github.io/2019/03/03/cf18winter/index.html">
 <meta property="og:site_name" content="飘雨小镇">
+<meta property="og:description" content="2019.02.15 Codeforces Round 532 (Div. 2) [x] CR 532 d2 (6/6) xxxxx? [x] D 思维构造   [x] E 二分+有向图拓扑排序 [x] F 线性基+预处理（离线或者在线）    F. 线性基题意给定$n$个数字（大小为$a_i$），$q$次询问，每次询问区间$[l_i,r_i]$内任选一些数的异或和是多少。 $n,q&amp;lt;=5e">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-02T16:23:51.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飘雨小镇">
+<meta name="twitter:title" content="cf18winter">
+<meta name="twitter:description" content="2019.02.15 Codeforces Round 532 (Div. 2) [x] CR 532 d2 (6/6) xxxxx? [x] D 思维构造   [x] E 二分+有向图拓扑排序 [x] F 线性基+预处理（离线或者在线）    F. 线性基题意给定$n$个数字（大小为$a_i$），$q$次询问，每次询问区间$[l_i,r_i]$内任选一些数的异或和是多少。 $n,q&amp;lt;=5e">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://Trotew.github.io/">
+  <link rel="canonical" href="http://Trotew.github.io/2019/03/03/cf18winter/">
 
 
 
 
 
-  <title>飘雨小镇</title>
+  <title>cf18winter | 飘雨小镇</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/03/cf18winter/" itemprop="url">cf18winter</a></h1>
+          <h1 class="post-title" itemprop="name headline">cf18winter</h1>
         
 
         <div class="post-meta">
@@ -298,9 +300,7 @@
       
 
       
-        
-          
-            <h1 id="2019-02-15-Codeforces-Round-532-Div-2"><a href="#2019-02-15-Codeforces-Round-532-Div-2" class="headerlink" title="2019.02.15 Codeforces Round 532 (Div. 2)"></a>2019.02.15 Codeforces Round 532 (Div. 2)</h1><ul>
+        <h1 id="2019-02-15-Codeforces-Round-532-Div-2"><a href="#2019-02-15-Codeforces-Round-532-Div-2" class="headerlink" title="2019.02.15 Codeforces Round 532 (Div. 2)"></a>2019.02.15 Codeforces Round 532 (Div. 2)</h1><ul>
 <li>[x] CR 532 d2 (6/6) xxxxx?<ul>
 <li>[x] D 思维构造  </li>
 <li>[x] E 二分+有向图拓扑排序</li>
@@ -404,8 +404,6 @@
 <p>以上，总时间复杂度$O(m)$</p>
 <h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(x) (int)x.size()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, ll&gt; pll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mn = <span class="number">3e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mm = <span class="number">1e7</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b[mn], c[mn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> h[mm];</span><br><span class="line">ll a[mm];  <span class="comment">// cost of i</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> L[mm], R[mm];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">readin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;u);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= u; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;v);</span><br><span class="line">            b[i].pb(v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= u; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;v);</span><br><span class="line">            c[i].pb(v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> q;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</span><br><span class="line">    <span class="keyword">int</span> now = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= q; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;u, &amp;v);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; sz(b[u]); k++) &#123;</span><br><span class="line">            h[k + now] = b[u][k];</span><br><span class="line">            a[k + now] = <span class="number">1l</span>l * c[u][k] * v;</span><br><span class="line">        &#125;</span><br><span class="line">        now += sz(b[u]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pll st[mm];</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getLR</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (cnt &gt; <span class="number">0</span> &amp;&amp; st[cnt - <span class="number">1</span>].first &lt; i) &#123;</span><br><span class="line">            R[st[cnt - <span class="number">1</span>].second] = i - <span class="number">1</span>;</span><br><span class="line">            cnt--;</span><br><span class="line">        &#125;</span><br><span class="line">        st[cnt++] = &#123;i + h[i] - <span class="number">1</span>, i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (cnt &gt; <span class="number">0</span>) R[st[cnt - <span class="number">1</span>].second] = m, cnt--;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = m; i; i--) &#123;</span><br><span class="line">        <span class="keyword">while</span> (cnt &gt; <span class="number">0</span> &amp;&amp; st[cnt - <span class="number">1</span>].first &gt; i) &#123;</span><br><span class="line">            L[st[cnt - <span class="number">1</span>].second] = i + <span class="number">1</span>;</span><br><span class="line">            cnt--;</span><br><span class="line">        &#125;</span><br><span class="line">        st[cnt++] = &#123;i - h[i] + <span class="number">1</span>, i&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (cnt &gt; <span class="number">0</span>) L[st[cnt - <span class="number">1</span>].second] = <span class="number">1</span>, cnt--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll dp[mm];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">1</span>, <span class="keyword">sizeof</span> dp);</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// stack: value / maxpos</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        dp[i] = min(&#123;dp[L[i] - <span class="number">1</span>] + a[i]&#125;);</span><br><span class="line">        <span class="keyword">while</span> (cnt &gt; <span class="number">0</span> &amp;&amp; st[cnt - <span class="number">1</span>].second &lt; i) cnt--;</span><br><span class="line">        <span class="keyword">if</span> (cnt &gt; <span class="number">0</span>) dp[i] = min(dp[i], st[cnt - <span class="number">1</span>].first);</span><br><span class="line">        <span class="keyword">if</span> (!cnt || cnt &gt; <span class="number">0</span> &amp;&amp; R[i] &lt;= st[cnt - <span class="number">1</span>].second &amp;&amp;</span><br><span class="line">                        st[cnt - <span class="number">1</span>].first &gt; dp[i - <span class="number">1</span>] + a[i])</span><br><span class="line">            st[cnt++] = &#123;dp[i - <span class="number">1</span>] + a[i], R[i]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, dp[m]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    readin();</span><br><span class="line">    getLR();</span><br><span class="line">    solve();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -420,424 +418,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Trotew.github.io/2019/02/25/CT-S03E07/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Trote_w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飘雨小镇">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/25/CT-S03E07/" itemprop="url">EyeBigBird2 2016 CT S03E07 2019.02.21</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T13:01:41+08:00">
-                2019-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/codeforces/" rel="tag"># codeforces</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>比赛节奏不错，但是最后出现了写题责任分配上的问题。</p>
-<ul>
-<li>A 分类讨论（大串暴力匹配，小串哈希处理）</li>
-<li>D 容斥+二维莫队</li>
-<li>F 解方程</li>
-<li>G 计数（容斥）</li>
-<li>H 思维状压DP</li>
-<li>I 思维</li>
-<li>J 树上最大子段和（倍增、LCT、树剖）</li>
-<li>K 前缀优化计数dp</li>
-</ul>
-<p>其中BE为温暖的签到题。<br>C题为较为简单的计数和容斥原理，在此不予讨论。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/25/CT-S03E07/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/25/CT-S03E07/" rel="next" title="EyeBigBird2 2016 CT S03E07 2019.02.21">
+                <i class="fa fa-chevron-left"></i> EyeBigBird2 2016 CT S03E07 2019.02.21
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Trotew.github.io/2019/02/23/BAPC17/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Trote_w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飘雨小镇">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/23/BAPC17/" itemprop="url">EyeBigBird2 BAPC 17 2019.02.17</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T21:29:52+08:00">
-                2019-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>比赛总体打的很顺，双方交流后上机AC，感觉是非常轻松愉快的事情。</p>
-<p>但是有很多简单题目没有在场上AC，比较亏。</p>
-<ul>
-<li>B 几何（圆交+圆与线段交+线段并）</li>
-<li>E 二分答案+二分图匹配</li>
-<li>G 状压DP</li>
-<li>H 几何（线段交）</li>
-<li>J 数据结构+问题转换</li>
-<li>K 图论dfs</li>
-</ul>
-<p>其余题目比较基础，不再讨论。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/23/BAPC17/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Trotew.github.io/2019/02/14/Problem-TODO-List/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Trote_w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飘雨小镇">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/14/Problem-TODO-List/" itemprop="url">Problem-TODO-List</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-14T18:52:00+08:00">
-                2019-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="TODO-LIST"><a href="#TODO-LIST" class="headerlink" title="TODO LIST"></a>TODO LIST</h1><h2 id="堆积已久的题目单"><a href="#堆积已久的题目单" class="headerlink" title="堆积已久的题目单"></a>堆积已久的题目单</h2><h3 id="题目清单"><a href="#题目清单" class="headerlink" title="题目清单"></a>题目清单</h3><ul>
-<li>[ ] Codeforces Round 524 C (1080C) - 简单的容斥原理</li>
-<li>[ ] Educational Codeforces Round 57 (Rated for Div. 2) E (1096E) 复杂的容斥原理</li>
-<li>[ ] Codeforces 补题(还剩下好多好多)</li>
-<li>[ ] 新题待开</li>
-</ul>
-<h4 id="不太可能会补的"><a href="#不太可能会补的" class="headerlink" title="不太可能会补的"></a>不太可能会补的</h4><ul>
-<li>[ ] Codeforces Round 539 1C - 平衡树</li>
-<li>[ ] Codeforces Round 524 F (1080F) - 可持久化线段树</li>
-<li>[ ] Codeforces Round 516 F (1063F) - 可持久化数据结构 + 后缀自动机</li>
-</ul>
-<h3 id="知识点学习"><a href="#知识点学习" class="headerlink" title="知识点学习"></a>知识点学习</h3><ul>
-<li>[ ] (这个暂时先不学了)可持久化数据结构</li>
-<li>[ ] 莫比乌斯反演（及相关数论）</li>
-<li>[ ] 容斥原理</li>
-<li>[ ] 斜率优化和四边形不等式优化DP</li>
-<li>[ ] 更多的数学知识</li>
-<li>[x] 树状数组套平衡树 - done by 2018/12/18</li>
-<li>[x] manachar - done by 2018/12/27</li>
-<li>[x] 线性基 - done by 寒假</li>
-<li>[x] 简单的数学基础 - done by 寒假</li>
-</ul>
-<h2 id="板子修订"><a href="#板子修订" class="headerlink" title="板子修订"></a>板子修订</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -847,132 +457,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Trotew.github.io/2018/12/22/My-New-Post/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Trote_w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飘雨小镇">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/22/My-New-Post/" itemprop="url">My New Post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-22T15:01:15+08:00">
-                2018-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="新的博客"><a href="#新的博客" class="headerlink" title="新的博客"></a>新的博客</h1><p>写博客是不可能写博客的（大雾）</p>
-<p>这里是无名菜鸡一只。</p>
-<p>Codeforces ID : Trote_w</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -980,6 +469,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1000,8 +493,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1052,6 +554,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2019-02-15-Codeforces-Round-532-Div-2"><span class="nav-number">1.</span> <span class="nav-text">2019.02.15 Codeforces Round 532 (Div. 2)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#F-线性基"><span class="nav-number">1.1.</span> <span class="nav-text">F. 线性基</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2019-02-17-Codeforces-Round-539-Div-2"><span class="nav-number">2.</span> <span class="nav-text">2019.02.17 Codeforces Round 539 (Div. 2)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1D-生成树计数"><span class="nav-number">2.1.</span> <span class="nav-text">1D. 生成树计数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">2.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2019-02-19-Educational-Codeforces-Round-60-Div-2"><span class="nav-number">3.</span> <span class="nav-text">2019.02.19 Educational Codeforces Round 60 (Div. 2)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2019-02-21-Codeforces-Round-530-Div-2"><span class="nav-number">4.</span> <span class="nav-text">2019.02.21 Codeforces Round 530 (Div. 2)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#E-结论DP-贪心（输出方案、模拟题）"><span class="nav-number">4.1.</span> <span class="nav-text">E. 结论DP+贪心（输出方案、模拟题）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-2"><span class="nav-number">4.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-2"><span class="nav-number">4.1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-2"><span class="nav-number">4.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-树状数组二分-树上DP"><span class="nav-number">4.2.</span> <span class="nav-text">F. 树状数组二分+树上DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-3"><span class="nav-number">4.2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-3"><span class="nav-number">4.2.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-3"><span class="nav-number">4.2.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2019-02-23-Codeforces-Round-541-Div-2"><span class="nav-number">5.</span> <span class="nav-text">2019.02.23 Codeforces Round 541 (Div. 2)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#E-思维-数学计数（细节）"><span class="nav-number">5.1.</span> <span class="nav-text">E. 思维+数学计数（细节）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-4"><span class="nav-number">5.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-4"><span class="nav-number">5.1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-4"><span class="nav-number">5.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-单调栈优化动态规划"><span class="nav-number">5.2.</span> <span class="nav-text">G. 单调栈优化动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-5"><span class="nav-number">5.2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-5"><span class="nav-number">5.2.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-5"><span class="nav-number">5.2.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1185,6 +703,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
