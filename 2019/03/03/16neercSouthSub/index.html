@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="至少有7道题目比较基础，做题的时候感觉队伍节奏太慢了。 GH为极度温暖的签到  A 显然可以2个2个减，3个最多减一次。 B 直接递归即可 C 一眼题，二分最短路 D 模拟题 J 二维背包问题  较为有趣的题目：  [x] E 简单结论+暴力 [x] I 贪心（或DP）  核心防AK  [x] F 高级动态规划 [ ] K 不知道怎么构造图论 [ ] L 离线预处理+大模拟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-06T14:44:34.163Z">
+<meta property="og:updated_time" content="2019-03-06T14:49:07.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EyeBigBird2 2016-2017 ACM-ICPC, NEERC, Southern Subregional Contest 2019.03.03">
 <meta name="twitter:description" content="至少有7道题目比较基础，做题的时候感觉队伍节奏太慢了。 GH为极度温暖的签到  A 显然可以2个2个减，3个最多减一次。 B 直接递归即可 C 一眼题，二分最短路 D 模拟题 J 二维背包问题  较为有趣的题目：  [x] E 简单结论+暴力 [x] I 贪心（或DP）  核心防AK  [x] F 高级动态规划 [ ] K 不知道怎么构造图论 [ ] L 离线预处理+大模拟">
@@ -337,10 +337,10 @@
 <p>问最小的总付款钱数和方案。</p>
 <p>$n\le 5000,\ b\le 1e5$</p>
 <h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>题目看似贪心，但是深思以后觉得贪心相当不适，决定动态规划，但是方程也很不好找，<del>所以放弃了</del>。</p>
-<p>我们需要一种状态转移方程，使得能记录或快速找到<code>当前拥有的超级硬币数量</code>和<code>当前的最小付款</code>即可。</p>
+<p>我们需要一种状态转移方程，使得能记录或快速找到<strong>当前拥有的超级硬币数量</strong>和<strong>当前的最小付款</strong>即可。</p>
 <p>经过一番思考（<del>然后失败了并看了题解，这里省略数次失败的心路历程</del>）,我们使用如下的状态定义：</p>
 <p>$d[i][j]$表示第$i$天结束时，额外得到了$j$个硬币的最小付钱数量。</p>
-<p>此时可以得到对于某个状态，当前的<code>超级硬币数量</code>为$b+j$，转移起来极其舒适了。</p>
+<p>此时可以得到对于某个状态，当前的<strong>超级硬币数量</strong>为$b+j$，转移起来极其舒适了。</p>
 <p>显然有状态转移方程：</p>
 <p>$d[i][j]=\min{ d[i-1][k] + \cdots }$，emmm好像列不出来</p>
 <p>不过问题不大，我们对于每种状态，枚举每天花了几个硬币，这总好了，适当转移一下。</p>
