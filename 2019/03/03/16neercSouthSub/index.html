@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="至少有7道题目比较基础，做题的时候感觉队伍节奏太慢了。 GH为极度温暖的签到  A 显然可以2个2个减，3个最多减一次。 B 直接递归即可 C 一眼题，二分最短路 D 模拟题 J 二维背包问题  较为有趣的题目：  [x] E 简单结论+暴力 [x] I 贪心（或DP）  核心防AK  [ ] F [ ] K [ ] L">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T14:48:29.722Z">
+<meta property="og:updated_time" content="2019-03-06T07:15:17.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EyeBigBird2 2016-2017 ACM-ICPC, NEERC, Southern Subregional Contest 2019.03.03">
 <meta name="twitter:description" content="至少有7道题目比较基础，做题的时候感觉队伍节奏太慢了。 GH为极度温暖的签到  A 显然可以2个2个减，3个最多减一次。 B 直接递归即可 C 一眼题，二分最短路 D 模拟题 J 二维背包问题  较为有趣的题目：  [x] E 简单结论+暴力 [x] I 贪心（或DP）  核心防AK  [ ] F [ ] K [ ] L">
@@ -327,7 +327,7 @@
 <p>$n,a_i\le 100$</p>
 <p>$-100\le d_i\le 100$</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>以下两个结论请尝试认真思考并加以证明。</p>
-<p>引理1：两支队伍$u,v$，当且仅当如果先展示$v$，则$u$无法触及，如果先展示$u$，则$u$可以超越$v$；再展示$v$，$v$又可以超越$u$时。$u$必须在$v$之前展示。其余时候谁先谁后并不影响答案。</p>
+<p>引理1：两支队伍$u,v$，当且仅当如果先展示$v$，则$u$无法超越$v$，而如果先展示$u$，则$u$可以超越$v$；再展示$v$，$v$又可以超越$u$时。$u$必须在$v$之前展示。其余时候谁先谁后并不影响答案。</p>
 <p>引理2：上述方式产生的$u\Rightarrow v$连有向边后，图必然是一张有向图。</p>
 <p>由上，暴力连边后拓扑排序求答案即可。</p>
 <p>时间复杂度$O(n^3)$</p>
