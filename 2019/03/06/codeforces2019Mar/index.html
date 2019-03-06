@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="Educational Codeforces Round 61 2019.3.5 (-148)  跌倒的地方。 跌倒了就爬起来。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-06T17:06:23.048Z">
+<meta property="og:updated_time" content="2019-03-06T17:15:12.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期的codeforces(2019.03.06)">
 <meta name="twitter:description" content="Educational Codeforces Round 61 2019.3.5 (-148)  跌倒的地方。 跌倒了就爬起来。">
@@ -309,8 +309,10 @@
 <h1 id="Educational-Codeforces-Round-61"><a href="#Educational-Codeforces-Round-61" class="headerlink" title="Educational Codeforces Round 61"></a>Educational Codeforces Round 61</h1><p>比赛时过于不清醒。</p>
 <h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>枚举哪两个不取，然后前缀和即可。</p>
 <h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>二分答案后发现可以$O(n\log n)$判断，想办法卡卡常即可，时间复杂度$O(n\log n\log s)$，其中$s$为答案的范围。</p>
-<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>只需要考虑对于背包的末尾DP一下即可，比如我们想办法装到$W-100$附近（$W$为最大背包容量），然后处理$W-200$~$W-100$的情况（拿出一些物品），然后对后面部分真的背包一下即可。</p>
-<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>这个区间DP可真秀啊，合并竟然可以大一统……</p>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>题意：你有一个体积$1e18$的超大背包和非常非常多体积为$1$~$8$的东西，问最大能装入背包的体积。</p>
+<p>只需要考虑对于背包的末尾DP一下即可，比如我们想办法装到$W-100$附近（$W$为最大背包容量），然后处理$W-200$~$W-100$的情况（拿出一些物品），然后对后面部分真的背包一下即可。</p>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>题意：给定长度为$500$的字符串，每次可以消除连续相同的一段字母，消除后前后拼起来，问最少消除次数。</p>
+<p>这个区间DP可真秀啊，合并竟然可以大一统……</p>
 <p>对于每一部分$[L,R]$，分为两种情况讨论：</p>
 <ul>
 <li>考虑切成$[L,mid]+[mid+1,R]+1$</li>
