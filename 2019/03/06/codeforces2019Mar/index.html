@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="Educational Codeforces Round 61 2019.3.5 (-148)  跌倒的地方。 跌倒了就爬起来。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-06T17:17:03.649Z">
+<meta property="og:updated_time" content="2019-03-07T03:34:03.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期的codeforces(2019.03.06)">
 <meta name="twitter:description" content="Educational Codeforces Round 61 2019.3.5 (-148)  跌倒的地方。 跌倒了就爬起来。">
@@ -307,18 +307,22 @@
 <p>跌倒了就爬起来。</p>
 <a id="more"></a>
 <h1 id="Educational-Codeforces-Round-61"><a href="#Educational-Codeforces-Round-61" class="headerlink" title="Educational Codeforces Round 61"></a>Educational Codeforces Round 61</h1><p>比赛时过于不清醒。</p>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>枚举哪两个不取，然后前缀和即可。</p>
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>二分答案后发现可以$O(n\log n)$判断，想办法卡卡常即可，时间复杂度$O(n\log n\log s)$，其中$s$为答案的范围。</p>
-<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>题意：你有一个体积$W=1e18$的超大背包和非常非常多体积为$1,2,3,\cdots,8$的东西，问最大能装入背包的体积。</p>
-<p>只需要考虑对于背包的末尾DP一下即可，比如我们想办法装到$W-100$附近（$W$为最大背包容量），然后处理$W-200$~$W-100$的情况（拿出一些物品），然后对后面部分真的背包一下即可。</p>
-<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>题意：给定长度为$500$的字符串，每次可以消除连续相同的一段字母，消除后前后拼起来，问最少消除次数。</p>
-<p>这个区间DP可真秀啊，合并竟然可以大一统……</p>
+<h2 id="C-暴力"><a href="#C-暴力" class="headerlink" title="C 暴力"></a>C 暴力</h2><p>枚举哪两个不取，然后前缀和即可。</p>
+<h2 id="D-二分答案，排序判断"><a href="#D-二分答案，排序判断" class="headerlink" title="D 二分答案，排序判断"></a>D 二分答案，排序判断</h2><p>二分答案后发现可以$O(n\log n)$判断，想办法卡卡常即可，时间复杂度$O(n\log n\log s)$，其中$s$为答案的范围。</p>
+<h2 id="E-背包问题"><a href="#E-背包问题" class="headerlink" title="E 背包问题"></a>E 背包问题</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>题意：你有一个体积$1e18$的超大背包和非常非常多体积为$1$~$8$的东西，问最大能装入背包的体积。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>只需要考虑对于背包的末尾DP一下即可，比如我们想办法装到$W-100$附近（$W$为最大背包容量），然后处理$W-200$~$W-100$的情况（拿出一些物品），然后对后面部分真的背包一下即可。</p>
+<h2 id="F-区间DP"><a href="#F-区间DP" class="headerlink" title="F 区间DP"></a>F 区间DP</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>给定长度为$500$的字符串，每次可以消除连续相同的一段字母，消除后前后拼起来，问最少消除次数。</p>
+<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>这个区间DP可真秀啊，合并竟然可以大一统……</p>
 <p>对于每一部分$[L,R]$，分为两种情况讨论：</p>
 <ul>
 <li>考虑切成$[L,mid]+[mid+1,R]+1$</li>
 <li>如果$S[L]$和$S[R]$前后相同，可能会合并头尾，合并头尾时答案可以归结为$\min {[L+1,R],[L,R-1],[L+1,R-1]+1}$</li>
 </ul>
-<h2 id="G-未读，待解决"><a href="#G-未读，待解决" class="headerlink" title="G 未读，待解决"></a>G 未读，待解决</h2><p>感觉总体而言题目还是比较简单的，这把掉分是真的亏……</p>
+<h2 id="G-预处理-线段树维护子树"><a href="#G-预处理-线段树维护子树" class="headerlink" title="G 预处理+线段树维护子树"></a>G 预处理+线段树维护子树</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>给定一个长度为$1e6$的数组，问对于每个长度为$l$的子数组，最长贪心序列有多长。最长贪心序列的长度是指每个数贪心地选取下一个比它大的数，子数组范围内形成的最长链有多长。</p>
+<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><p>考虑一开始先把所有连接信息处理好，这里可以使用单调栈。</p>
+<p>然后对所有点按序重新标号，构成一些森林，预处理所有深度，准备从左到右滑动窗口计算答案。</p>
+<p>构建目前范围的线段树，查询全局最大值即为答案。</p>
+<p>更新时，加入的新节点加入到线段树中，并把删去的旧节点的子树区间$-1$即可。</p>
 
       
     </div>
@@ -480,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Educational-Codeforces-Round-61"><span class="nav-number">1.</span> <span class="nav-text">Educational Codeforces Round 61</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">1.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">1.2.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">1.3.</span> <span class="nav-text">E</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F"><span class="nav-number">1.4.</span> <span class="nav-text">F</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-未读，待解决"><span class="nav-number">1.5.</span> <span class="nav-text">G 未读，待解决</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Educational-Codeforces-Round-61"><span class="nav-number">1.</span> <span class="nav-text">Educational Codeforces Round 61</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-暴力"><span class="nav-number">1.1.</span> <span class="nav-text">C 暴力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-二分答案，排序判断"><span class="nav-number">1.2.</span> <span class="nav-text">D 二分答案，排序判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-背包问题"><span class="nav-number">1.3.</span> <span class="nav-text">E 背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-区间DP"><span class="nav-number">1.4.</span> <span class="nav-text">F 区间DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-预处理-线段树维护子树"><span class="nav-number">1.5.</span> <span class="nav-text">G 预处理+线段树维护子树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
