@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="Educational Codeforces Round 61 2019.3.5 (-148)  跌倒的地方。 跌倒了就爬起来。  Codeforces Round 545 d2 2019.3.8 (-1)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-08T17:34:17.892Z">
+<meta property="og:updated_time" content="2019-03-09T16:16:46.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近期的codeforces(2019.03.09 upd)">
 <meta name="twitter:description" content="Educational Codeforces Round 61 2019.3.5 (-148)  跌倒的地方。 跌倒了就爬起来。  Codeforces Round 545 d2 2019.3.8 (-1)">
@@ -309,7 +309,7 @@
 <li>Codeforces Round 545 d2 2019.3.8 (-1)</li>
 </ul>
 <a id="more"></a>
-<h1 id="Educational-Codeforces-Round-61"><a href="#Educational-Codeforces-Round-61" class="headerlink" title="Educational Codeforces Round 61"></a>Educational Codeforces Round 61</h1><p><a href="https://codeforces.com/blog/entry/65752" target="_blank" rel="noopener">官方题解</a></p>
+<h1 id="Educational-Codeforces-Round-61-7-7"><a href="#Educational-Codeforces-Round-61-7-7" class="headerlink" title="Educational Codeforces Round 61 (7/7)"></a>Educational Codeforces Round 61 (7/7)</h1><p><a href="https://codeforces.com/blog/entry/65752" target="_blank" rel="noopener">官方题解</a></p>
 <p>比赛时过于不清醒。</p>
 <h2 id="C-暴力"><a href="#C-暴力" class="headerlink" title="C 暴力"></a>C 暴力</h2><p>枚举哪两个不取，然后前缀和即可。</p>
 <h2 id="D-二分答案，排序判断"><a href="#D-二分答案，排序判断" class="headerlink" title="D 二分答案，排序判断"></a>D 二分答案，排序判断</h2><p>二分答案后发现可以$O(n\log n)$判断，想办法卡卡常即可，时间复杂度$O(n\log n\log s)$，其中$s$为答案的范围。</p>
@@ -327,18 +327,34 @@
 <p>然后对所有点按序重新标号，构成一些森林，预处理所有深度，准备从右到左滑动窗口计算答案。</p>
 <p>构建目前范围的线段树，查询全局最大值即为答案。</p>
 <p>更新时，加入的新节点加入到线段树中，并把删去的旧节点的子树区间$-1$即可。</p>
-<h1 id="Codeforces-Round-545-d2-2019-3-8-1"><a href="#Codeforces-Round-545-d2-2019-3-8-1" class="headerlink" title="Codeforces Round 545 d2 2019.3.8 (-1)"></a>Codeforces Round 545 d2 2019.3.8 (-1)</h1><h2 id="2B-思维"><a href="#2B-思维" class="headerlink" title="2B 思维"></a>2B 思维</h2><p>O(n)做法：</p>
+<h1 id="Codeforces-Round-545-d2-2019-3-8-1-6-8"><a href="#Codeforces-Round-545-d2-2019-3-8-1-6-8" class="headerlink" title="Codeforces Round 545 d2 2019.3.8 (-1) (6/8)"></a>Codeforces Round 545 d2 2019.3.8 (-1) (6/8)</h1><p>后面的题目还是比较有趣的。</p>
+<h2 id="2B-思维"><a href="#2B-思维" class="headerlink" title="2B 思维"></a>2B 思维</h2><p>O(n)做法：</p>
 <p>可以发现10和01中选哪个是没有区别的。</p>
-<p>一开始选中所有10，默认所有11都归对方，如果不够则从对方那里拿一点11和01过来，如果超标则扔掉一点并且拿进一些00。</p>
+<p>一开始选中所有10，默认其他所有东西都归对方，接下来贪心地按序执行：</p>
+<ol>
+<li>如果对于某个11，拿了之后我方还是小于等于对方分数，则拿取。直到某次抉择不拿取或拿完。</li>
+<li>如果一开始我方分数就比对方多，则考虑扔掉一些10。</li>
+<li>如果此时我方分数仍然比对方少，则考虑再拿进一些01，直到拿完或者分数相同。</li>
+<li>如果此时我方选取的人数不足$n/2$，则再拿进一些00。</li>
+</ol>
+<p>以上算法按顺序执行结束后(每个都是while)，判断一下方案是否合法，如果合法则输出方案，否则输出-1。</p>
 <h2 id="2C-1A-排序离散化"><a href="#2C-1A-排序离散化" class="headerlink" title="2C/1A 排序离散化"></a>2C/1A 排序离散化</h2><p>每行每列排序并离散化去重，答案为 行列比自己小的数量中的更大值+行列比自己大的数量中的更大值。</p>
 <h2 id="2D-1B-字符串-KMP"><a href="#2D-1B-字符串-KMP" class="headerlink" title="2D/1B 字符串(KMP)"></a>2D/1B 字符串(KMP)</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定两个$01$串$a,b$，重排$a$使得含有$a$中$b$子串的数量最多。</p>
 <p>$|a|,|b|\le 5e5$</p>
 <h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><p>注意到$b=1001$时，$1001001$即可以得到两个$b$串。</p>
 <p>利用KMP求出最长前缀后缀，尽可能填充即可。</p>
 <p>如上例，应该填充成$1001001001\cdots$直到某种数量不足。</p>
-<h2 id="2E-1C-SCC（强连通分量）-DP"><a href="#2E-1C-SCC（强连通分量）-DP" class="headerlink" title="2E/1C SCC（强连通分量）+DP"></a>2E/1C SCC（强连通分量）+DP</h2><p>考虑建立$n*d$个点$(i,j)$表示星期$j$的点$i$，然后做一遍SCC后跑有向图DP即可。</p>
+<p>最长前缀后缀是指最长的相同的前缀后缀长度。</p>
+<p>这个信息当然也可以用hash求得，但是这是KMP能直接求得的。</p>
+<h2 id="2E-1C-SCC（强连通分量）-DP"><a href="#2E-1C-SCC（强连通分量）-DP" class="headerlink" title="2E/1C SCC（强连通分量）+DP"></a>2E/1C SCC（强连通分量）+DP</h2><p>（经典题目）</p>
+<p>考虑建立$n*d$个点$(i,j)$表示星期$j$的点$i$，然后做一遍SCC后跑有向图DP即可。</p>
 <p>简单思索可以明白，如果有办法从$(i,j)$跑到$(i,j’)$，则总有办法从$(i,j’)$跑到$(i,j)$，故不会重复计数。</p>
-<h2 id="2F-1D-floyd判圈算法"><a href="#2F-1D-floyd判圈算法" class="headerlink" title="2F/1D floyd判圈算法"></a>2F/1D floyd判圈算法</h2>
+<p>比如如果有一个大小为$p$的环，其中，$j$仅通过这个环能到达的日期为$j+k*p\equiv c(mod\ d)$中的$c$（其中$k$为任意整数），显然当$k=d$时会回到自己。</p>
+<p>但是可能需要卡一卡内存。</p>
+<h2 id="2F-1D-floyd判圈算法"><a href="#2F-1D-floyd判圈算法" class="headerlink" title="2F/1D floyd判圈算法"></a>2F/1D floyd判圈算法</h2><p>（经典题目）</p>
+<p>先派出两个小兵，一个每次走两步，一个每次走一步，直到他们在圆上交汇。</p>
+<p>再让大部队和两个小兵一起走（即next 0 1 2 3 4 5 6 7 8 9），直到双方相遇，算法结束。</p>
+<h2 id="1E-斜率相关？-（待补）"><a href="#1E-斜率相关？-（待补）" class="headerlink" title="1E 斜率相关？ （待补）"></a>1E 斜率相关？ （待补）</h2>
       
     </div>
     
@@ -499,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Educational-Codeforces-Round-61"><span class="nav-number">1.</span> <span class="nav-text">Educational Codeforces Round 61</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-暴力"><span class="nav-number">1.1.</span> <span class="nav-text">C 暴力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-二分答案，排序判断"><span class="nav-number">1.2.</span> <span class="nav-text">D 二分答案，排序判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-背包问题"><span class="nav-number">1.3.</span> <span class="nav-text">E 背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-区间DP"><span class="nav-number">1.4.</span> <span class="nav-text">F 区间DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-预处理-线段树维护子树"><span class="nav-number">1.5.</span> <span class="nav-text">G 预处理+线段树维护子树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Codeforces-Round-545-d2-2019-3-8-1"><span class="nav-number">2.</span> <span class="nav-text">Codeforces Round 545 d2 2019.3.8 (-1)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2B-思维"><span class="nav-number">2.1.</span> <span class="nav-text">2B 思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2C-1A-排序离散化"><span class="nav-number">2.2.</span> <span class="nav-text">2C/1A 排序离散化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2D-1B-字符串-KMP"><span class="nav-number">2.3.</span> <span class="nav-text">2D/1B 字符串(KMP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-3"><span class="nav-number">2.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-3"><span class="nav-number">2.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2E-1C-SCC（强连通分量）-DP"><span class="nav-number">2.4.</span> <span class="nav-text">2E/1C SCC（强连通分量）+DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2F-1D-floyd判圈算法"><span class="nav-number">2.5.</span> <span class="nav-text">2F/1D floyd判圈算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Educational-Codeforces-Round-61-7-7"><span class="nav-number">1.</span> <span class="nav-text">Educational Codeforces Round 61 (7/7)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-暴力"><span class="nav-number">1.1.</span> <span class="nav-text">C 暴力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-二分答案，排序判断"><span class="nav-number">1.2.</span> <span class="nav-text">D 二分答案，排序判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-背包问题"><span class="nav-number">1.3.</span> <span class="nav-text">E 背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F-区间DP"><span class="nav-number">1.4.</span> <span class="nav-text">F 区间DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G-预处理-线段树维护子树"><span class="nav-number">1.5.</span> <span class="nav-text">G 预处理+线段树维护子树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Codeforces-Round-545-d2-2019-3-8-1-6-8"><span class="nav-number">2.</span> <span class="nav-text">Codeforces Round 545 d2 2019.3.8 (-1) (6/8)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2B-思维"><span class="nav-number">2.1.</span> <span class="nav-text">2B 思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2C-1A-排序离散化"><span class="nav-number">2.2.</span> <span class="nav-text">2C/1A 排序离散化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2D-1B-字符串-KMP"><span class="nav-number">2.3.</span> <span class="nav-text">2D/1B 字符串(KMP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意-3"><span class="nav-number">2.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解-3"><span class="nav-number">2.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2E-1C-SCC（强连通分量）-DP"><span class="nav-number">2.4.</span> <span class="nav-text">2E/1C SCC（强连通分量）+DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2F-1D-floyd判圈算法"><span class="nav-number">2.5.</span> <span class="nav-text">2F/1D floyd判圈算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1E-斜率相关？-（待补）"><span class="nav-number">2.6.</span> <span class="nav-text">1E 斜率相关？ （待补）</span></a></li></ol></li></ol></div>
             
 
           </div>
