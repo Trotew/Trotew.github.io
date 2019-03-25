@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="飘雨小镇">
 <meta property="og:description" content="这里是参赛须知。 题解已经同步在这里。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T16:15:17.619Z">
+<meta property="og:updated_time" content="2019-03-25T16:17:38.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浙江工业大学第十七届大学生程序设计竞赛">
 <meta name="twitter:description" content="这里是参赛须知。 题解已经同步在这里。">
@@ -358,8 +358,8 @@
 <h2 id="D-放我出去-2-Solved-26-Total-Submit-213"><a href="#D-放我出去-2-Solved-26-Total-Submit-213" class="headerlink" title="D 放我出去 2 (Solved: 26/ Total Submit: 213)"></a>D 放我出去 2 (Solved: 26/ Total Submit: 213)</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定一个圆柱体和内部的一个点及其速度方向，问多久之后内部的点会与圆柱体表面相撞。</p>
 <h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><p>考虑分离$z$轴和$xy$平面，分别考虑是否</p>
 <ol>
-<li>$0\le v_z*t+z_0\le 500$</li>
-<li>$(v_x<em>t+x_0)^2+(v_y</em>t+y_0)\le 10000$</li>
+<li>$0\le v_z\cdot t+z_0\le 500$</li>
+<li>$(v_x\cdot t+x_0)^2+(v_y\cdot t+y_0)\le 10000$</li>
 </ol>
 <p>这两部分可以分别计算并取最小值。</p>
 <p>具体可以使用二分或者解方程解决。</p>
@@ -369,7 +369,7 @@
 <h3 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h3><p>题意显然是问$a_i&gt;0$的和以及个数是多少。</p>
 <p>考虑建立两个变量，然后for循环解决。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;u);</span><br><span class="line">        <span class="keyword">if</span> (u &gt; <span class="number">0</span>) ans += u, cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, ans, cnt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="F-团队协作-Solved-5-Total-Submit-9"><a href="#F-团队协作-Solved-5-Total-Submit-9" class="headerlink" title="F 团队协作 (Solved: 5/ Total Submit: 9)"></a>F 团队协作 (Solved: 5/ Total Submit: 9)</h2><h3 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h3><p>把 $2<em>1$ 或 $1</em>2$ 的小木块放进有些位置不能放的 $4*4$ 方格中，问有多少种不同的填法。</p>
+<h2 id="F-团队协作-Solved-5-Total-Submit-9"><a href="#F-团队协作-Solved-5-Total-Submit-9" class="headerlink" title="F 团队协作 (Solved: 5/ Total Submit: 9)"></a>F 团队协作 (Solved: 5/ Total Submit: 9)</h2><h3 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h3><p>把 $2\cdot 1$ 或 $1\cdot 2$ 的小木块放进有些位置不能放的 $4\cdot 4$ 方格中，问有多少种不同的填法。</p>
 <p>数据组数 $T\le 65536$</p>
 <h3 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h3><p>方案1：</p>
 <p>考虑暴力填入，因为不同的填入的砖块一共只有不超过$24$块，所以暴力枚举复杂度大概是$2^{24}$，如果判断算法优秀的话可以通过。</p>
